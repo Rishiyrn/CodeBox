@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Jersey_10 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 const GameFont = Jersey_10({
   subsets: ["latin"],
   variable: "--font-game",
-  weight: ['400'],
+  weight: ["400"],
 });
 
 const inter = Inter({
@@ -35,21 +36,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning className="dark">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable}
           ${GameFont.variable} ${inter.variable}
         antialiased`}
-      >
-        <ThemeProvider
+        >
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
