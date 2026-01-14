@@ -13,15 +13,20 @@ export function ThemeProvider({
   const { user } = useUser();
   const [userDetail, setUserDetail] = React.useState();
 
-  React.useEffect(() => {
-    user && CreateNewUser();
-  }, [user]);
+  const createNewUser = React.useCallback(async () => {
+    try {
+      const result = await axios.post("/api/user", {});
+      setUserDetail(result.data);
+    } catch (error) {
+      console.error("Failed to create/fetch user:", error);
+    }
+  }, []);
 
-  const CreateNewUser = async () => {
-    const result = await axios.post("/api/user", {});
-    console.log("New User Created:", result.data);
-    setUserDetail(result.data);
-  };
+  React.useEffect(() => {
+    if (user) {
+      createNewUser();
+    }
+  }, [user, createNewUser]);
 
   return (
     <NextThemesProvider {...props}>
