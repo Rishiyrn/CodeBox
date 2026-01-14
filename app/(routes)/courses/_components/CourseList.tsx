@@ -24,10 +24,15 @@ function CourseList() {
     }, [])
 
     const GetAllCourses=async()=>{
-        setLoading(true);
-        const result=await axios.get('/api/course');
-        setCourseList(result?.data);
-        setLoading(false);
+        try {
+            setLoading(true);
+            const result=await axios.get('/api/course');
+            setCourseList(result?.data);
+        } catch (error) {
+            console.error('Failed to fetch courses:', error);
+        } finally {
+            setLoading(false);
+        }
     }
 
   return (
