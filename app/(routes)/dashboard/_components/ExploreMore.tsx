@@ -42,7 +42,7 @@ function ExploreMore() {
               height={80}
             />
             <div>
-                <h2 className="font-medium text-2xl font-game">{option?.title}o</h2>
+                <h2 className="font-medium text-2xl font-game">{option.title}</h2>
                 <p className="font-game text-gray-400">{option.desc}</p>
             </div>
           </div>
