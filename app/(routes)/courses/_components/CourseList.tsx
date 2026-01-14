@@ -6,12 +6,12 @@ import { ChartNoAxesColumnIncreasingIcon } from 'lucide-react';
 
 type Course={
     id:number,
-    courseId:number,
+    CourseId:number,
     title:string,
     desc:string,
     level:string,
     bannerImage:string,
-    tag:string
+    tags:string
 }
 
 function CourseList() {
