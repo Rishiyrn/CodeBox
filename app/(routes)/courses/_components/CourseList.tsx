@@ -39,7 +39,7 @@ function CourseList() {
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-3'>
       {courseList?.map((course,index)=>(
         <div key={index} className='border-4 rounded-xl hover:bg-zinc-900 cursor-pointer'>
-            <Image src={(course?.bannerImage).trimEnd()} alt={course?.title}
+            <Image src={course.bannerImage?.trimEnd() ?? ''} alt={course.title ?? ''}
             width={400} height={400}
             className='w-full h-[200px] object-cover rounded-t-lg'/>
             <div className='p-4'>
