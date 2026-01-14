@@ -7,12 +7,18 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   const user = await currentUser();
 
+  if (!user || !user.primaryEmailAddress?.emailAddress) {
+    return NextResponse.json(
+      { error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+
   //If user already exists?
   const users = await db
     .select()
     .from(usersTable)
-    //@ts-ignore
-    .where(eq(usersTable.email, user?.primaryEmailAddress?.emailAddress));
+    .where(eq(usersTable.email, user.primaryEmailAddress.emailAddress));
 
   //If not create new user in DB
   if (users?.length <= 0) {
