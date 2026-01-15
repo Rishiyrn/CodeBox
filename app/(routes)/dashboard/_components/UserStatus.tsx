@@ -3,6 +3,7 @@ import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import React from "react";
 
+
 function UserStatus() {
   const { user } = useUser();
   return (
@@ -16,7 +17,7 @@ function UserStatus() {
         />
         <h2 className="font-game text-2xl">{user?.primaryEmailAddress?.emailAddress}</h2>
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5 mt-2">
         <div className="flex gap-3 items-center">
             <Image src={'/star.png'} alt="star" width={35} height={35}/>
             <div>
