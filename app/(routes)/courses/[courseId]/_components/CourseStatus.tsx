@@ -35,6 +35,14 @@ function CourseStatus({ courseDetail }: Props) {
 
   };
 
+  const UpdateProgress=(currentValue:number, totalValue:number)=>{
+    if(currentValue && totalValue){
+      const perc=(currentValue*100)/totalValue;
+      return perc;
+    }
+    return 0;
+  }
+
   return (
     <div className="font-game p-4 border-4 rounded-2xl w-full">
       <h2 className="text-3xl">Course Progress</h2>
@@ -52,9 +60,10 @@ function CourseStatus({ courseDetail }: Props) {
         <Image src={"/star.png"} alt="book" width={50} height={50} />
         <div className="w-full">
           <h2 className="flex justify-between text-2xl ">
-            XP Earned <span className="text-gray-400">1/{counts?.totalXp}</span>
+            XP Earned <span className="text-gray-400">{courseDetail?.courseEnrolledInfo?.xpEarned}/{counts?.totalXp}</span>
           </h2>
-          <Progress value={37} className="mt-2" />
+          {/* @ts-ignore */}
+          <Progress value={UpdateProgress(courseDetail?.courseEnrolledInfo?.xpEarned??0,counts?.totalXp)} className="mt-2" />
         </div>
       </div>
     </div>
