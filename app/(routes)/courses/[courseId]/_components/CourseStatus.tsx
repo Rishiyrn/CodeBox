@@ -35,13 +35,10 @@ function CourseStatus({ courseDetail }: Props) {
 
   };
 
-  const UpdateProgress=(currentValue:number, totalValue:number)=>{
-    if(currentValue && totalValue){
-      const perc=(currentValue*100)/totalValue;
-      return perc;
-    }
-    return 0;
-  }
+  const UpdateProgress = (currentValue: number, totalValue: number): number => {
+    if (totalValue <= 0) return 0;
+    return (currentValue * 100) / totalValue;
+  };
 
   return (
     <div className="font-game p-4 border-4 rounded-2xl w-full">
