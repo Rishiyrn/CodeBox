@@ -47,9 +47,10 @@ function CourseStatus({ courseDetail }: Props) {
         <Image src={"/book.png"} alt="book" width={50} height={50} />
         <div className="w-full">
           <h2 className="flex justify-between text-2xl ">
-            Excercises <span className="text-gray-400">1/{counts?.totalExce}</span>
+            Excercises <span className="text-gray-400">{courseDetail?.completedExercises?.length}/{counts?.totalExce}</span>
           </h2>
-          <Progress value={37} className="mt-2" />
+          {/* @ts-ignore */}
+          <Progress value={UpdateProgress(courseDetail?.completedExercises?.length, counts?.totalExce)} className="mt-2" />
         </div>
       </div>
 

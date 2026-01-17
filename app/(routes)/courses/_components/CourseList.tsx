@@ -15,8 +15,15 @@ export type Course = {
   tags: string;
   chapters?: Chapter[];
   userEnrolled?: boolean,
-  courseEnrolledInfo?:courseEnrolledInfo
+  courseEnrolledInfo?:courseEnrolledInfo,
+  completedExercises?: completedExercises[]
 };
+
+type completedExercises={
+  chapterId:number,
+  courseId:number,
+  exerciseId:number
+}
 
 type courseEnrolledInfo={
   xpEarned:number,
