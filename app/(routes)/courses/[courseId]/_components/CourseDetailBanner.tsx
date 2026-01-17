@@ -16,14 +16,19 @@ type Props = {
 function CourseDetailBanner({ loading, courseDetail, refreshData }: Props) {
   const [loading_, setLoading_] = useState(false);
   const EnrollCourse = async () => {
+    if (!courseDetail?.CourseId) return;
     setLoading_(true);
-    const result = await axios.post("/api/enroll-course", {
-      courseId: courseDetail?.CourseId,
-    });
-    console.log(result);
-    toast.success("Course Enrolled!");
-    refreshData();
-    setLoading_(false);
+    try {
+      await axios.post("/api/enroll-course", {
+        courseId: courseDetail.CourseId,
+      });
+      toast.success("Course Enrolled!");
+      refreshData();
+    } catch (err) {
+      toast.error("Enrollment failed. Please try again.");
+    } finally {
+      setLoading_(false);
+    }
   };
 
   return (
