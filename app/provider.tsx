@@ -7,7 +7,7 @@ import axios from "axios";
 import { UserDetailContext } from "@/context/UserDetailContext";
 import Header from "./_components/Header";
 
-export function ThemeProvider({
+export function Provider({
   children,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {

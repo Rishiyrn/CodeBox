@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Jersey_10,} from "next/font/google";
+import { Geist, Geist_Mono, Inter, Jersey_10 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/app/provider";
+import { Provider } from "@/app/provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,14 +44,15 @@ export default function RootLayout({
           ${GameFont.variable} ${inter.variable}
         antialiased`}
         >
-          <ThemeProvider
+          <Provider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
             {children}
-          </ThemeProvider>
+            <Toaster />
+          </Provider>
         </body>
       </html>
     </ClerkProvider>
