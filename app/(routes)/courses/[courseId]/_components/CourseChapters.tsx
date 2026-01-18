@@ -13,6 +13,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
 
 type Props = {
   loading: boolean;
@@ -23,7 +24,7 @@ function CourseChapters({ loading, courseDetail }: Props) {
   const EnableExercise = (
     chapterIndex: number,
     exerciseIndex: number,
-    chapterExercisesLength: number
+    chapterExercisesLength: number,
   ) => {
     const completed = courseDetail?.completedExercises;
 
@@ -49,7 +50,7 @@ function CourseChapters({ loading, courseDetail }: Props) {
     const completedChapters = courseDetail?.completedExercises;
 
     const completedChapter = completedChapters?.find(
-      (item) => item.chapterId == chapterId && item.exerciseId == exerciseId
+      (item) => item.chapterId == chapterId && item.exerciseId == exerciseId,
     );
 
     return completedChapter ? true : false;
@@ -93,12 +94,23 @@ function CourseChapters({ loading, courseDetail }: Props) {
                         {EnableExercise(
                           index,
                           indexExc,
-                          chapter?.exercises?.length
+                          chapter?.exercises?.length,
                         ) ? (
-                          <Button variant={"pixel"}>{exc?.xp} xp</Button>
+                          <Link
+                            href={
+                              "/courses/" +
+                              courseDetail?.CourseId +
+                              "/" +
+                              chapter?.chapterId +
+                              "/" +
+                              exc?.slug
+                            }
+                          >
+                            <Button variant={"pixel"}>{exc?.xp} xp</Button>
+                          </Link>
                         ) : isExerciseCompleted(
                             chapter?.chapterId,
-                            indexExc + 1
+                            indexExc + 1,
                           ) ? (
                           <Button variant={"pixel"} className="bg-green-600">
                             Completed
