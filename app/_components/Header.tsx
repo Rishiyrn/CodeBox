@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 
 const courses = [
   {
@@ -73,6 +74,8 @@ const courses = [
 
 function Header() {
   const { user } = useUser();
+  const path = usePathname();
+  const { exerciseslug } = useParams();
 
   return (
     <div className="p-4 max-w-7xl flex justify-between items-center w-full">
@@ -81,42 +84,48 @@ function Header() {
         <h2 className="font-bold text-4xl font-game">CodeBox</h2>
       </div>
       {/* Navbar */}
-      <NavigationMenu>
-        <NavigationMenuList className="gap-8">
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid md:grid-cols-2 gap-2 sm:w-[400px] md:w-[500px] lg:w-[600px]">
-                {courses.map((course, index) => (
-                  <div
-                    key={index}
-                    className="p-2 hover:bg-accent rounded-2xl cursor-pointer"
-                  >
-                    <h2 className="font-medium">{course.name}</h2>
-                    <p className="text-sm text-gray-500">{course.desc}</p>
-                  </div>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/projects">Projects</NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/pricing">Pricing</NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/contact">Contact Us</NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+      {!exerciseslug ? (
+        <NavigationMenu>
+          <NavigationMenuList className="gap-8">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid md:grid-cols-2 gap-2 sm:w-[400px] md:w-[500px] lg:w-[600px]">
+                  {courses.map((course, index) => (
+                    <div
+                      key={index}
+                      className="p-2 hover:bg-accent rounded-2xl cursor-pointer"
+                    >
+                      <h2 className="font-medium">{course.name}</h2>
+                      <p className="text-sm text-gray-500">{course.desc}</p>
+                    </div>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/projects">Projects</NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/pricing">Pricing</NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/contact">
+                Contact Us
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      ) : (
+        <h2 className="font-game text-2xl">{exerciseslug?.toString()?.replaceAll("-", " ").toLocaleUpperCase()}</h2>
+      )}
       {/*sign up / login buttons */}
       {!user ? (
         <Link href="/sign-in">
-        <Button className="font-game text-2xl" variant="pixel">
-          Sign Up
-        </Button>
-      </Link>
+          <Button className="font-game text-2xl" variant="pixel">
+            Sign Up
+          </Button>
+        </Link>
       ) : (
         <div className="flex gap-4 items-center">
           <Link href="/dashboard">
