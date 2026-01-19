@@ -91,11 +91,14 @@ function CourseChapters({ loading, courseDetail }: Props) {
                           <h2 className="text-3xl">{exc.name}</h2>
                         </div>
 
-                        {EnableExercise(
-                          index,
-                          indexExc,
-                          chapter?.exercises?.length,
+                        {isExerciseCompleted(
+                          chapter?.chapterId,
+                          indexExc + 1,
                         ) ? (
+                          <Button variant={"pixel"} className="bg-green-600">
+                            Completed
+                          </Button>
+                        ) : courseDetail?.userEnrolled ? (
                           <Link
                             href={
                               "/courses/" +
@@ -108,13 +111,6 @@ function CourseChapters({ loading, courseDetail }: Props) {
                           >
                             <Button variant={"pixel"}>{exc?.xp} xp</Button>
                           </Link>
-                        ) : isExerciseCompleted(
-                            chapter?.chapterId,
-                            indexExc + 1,
-                          ) ? (
-                          <Button variant={"pixel"} className="bg-green-600">
-                            Completed
-                          </Button>
                         ) : (
                           <Tooltip>
                             <TooltipTrigger asChild>
