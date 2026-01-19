@@ -47,14 +47,17 @@ function CodeEditor({ courseExerciseData, loading }: Props) {
   const { exerciseslug } = useParams();
   const exerciseIndex = courseExerciseData?.exercises?.findIndex(
     (item) => item.slug == exerciseslug,
-  );
+  ) ?? -1;
+  const hasExercise = exerciseIndex >= 0;
 
-  const IsCompleted = courseExerciseData?.completedExercise?.find(
-    (item) => item?.exerciseId == Number(exerciseIndex) + 1,
-  );
+  const IsCompleted = hasExercise
+    ? courseExerciseData?.completedExercise?.find(
+        (item) => item?.exerciseId == exerciseIndex + 1,
+      )
+    : false;
 
   const onCompleteExercise = async () => {
-    if (exerciseIndex == undefined) {
+    if (!courseExerciseData || !hasExercise) {
       return;
     }
     const result = await axios.post("/api/exercise/complete", {
