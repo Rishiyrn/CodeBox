@@ -138,9 +138,11 @@ function Playground() {
         </Link>
         <div className="flex gap-3 items-center">
           <Image src={"/star.png"} alt="star" width={40} height={40} />
-          <h2 className="text-2xl">
-            You can Earn <span className="text-4xl">{exerciseInfo?.xp}</span> XP
-          </h2>
+          {exerciseInfo?.xp && (
+            <h2 className="text-2xl">
+              You can Earn <span className="text-4xl">{exerciseInfo.xp}</span> XP
+            </h2>
+          )}
         </div>
         <Link href={nextButtonRoute ?? "/courses/" + courseId}>
           <Button className="text-xl" variant={"pixel"}>
