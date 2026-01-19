@@ -36,8 +36,9 @@ export async function POST(req: NextRequest) {
     .from(CompletedExerciseTable)
     .where(
       and(
-        eq(CompletedExerciseTable?.courseId, courseId),
-        eq(CompletedExerciseTable?.chapterId, chapterId),
+        eq(CompletedExerciseTable.courseId, courseId),
+        eq(CompletedExerciseTable.chapterId, chapterId),
+        eq(CompletedExerciseTable.userId, userEmail),
       ),
     );
 
