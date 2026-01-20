@@ -29,10 +29,15 @@ function EnrolledCourses() {
 
   const GetUserEnrolledCourses = async () => {
     setLoading(true);
-    const result = await axios.get("/api/course?courseid=enrolled");
-    console.log(result?.data);
-    setEnrolledCourses(result.data);
-    setLoading(false);
+    try {
+      const result = await axios.get("/api/course?courseid=enrolled");
+      setEnrolledCourses(result.data ?? []);
+    } catch (error) {
+      console.error("Failed to load enrolled courses:", error);
+      setEnrolledCourses([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
