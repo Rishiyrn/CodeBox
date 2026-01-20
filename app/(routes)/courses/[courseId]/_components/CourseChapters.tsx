@@ -14,6 +14,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 
 type Props = {
   loading: boolean;
@@ -21,6 +22,9 @@ type Props = {
 };
 
 function CourseChapters({ loading, courseDetail }: Props) {
+  const { has } = useAuth();
+  const hasUnlimitedAccess = has && has({ plan: "unlimited" });
+
   const EnableExercise = (
     chapterIndex: number,
     exerciseIndex: number,
@@ -69,11 +73,18 @@ function CourseChapters({ loading, courseDetail }: Props) {
             <Accordion type="single" collapsible key={index}>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="p-3 hover:bg-zinc-800 font-game text-4xl">
-                  <div className="flex gap-10">
-                    <h2 className="h-12 w-12 bg-zinc-800 rounded-full flex items-center justify-center">
-                      {index + 1}
-                    </h2>
-                    <h2>{chapter?.name}</h2>
+                  <div className="flex items-center justify-between w-full">
+                    <div className="flex gap-10">
+                      <h2 className="h-12 w-12 bg-zinc-800 rounded-full flex items-center justify-center">
+                        {index + 1}
+                      </h2>
+                      <h2>{chapter?.name}</h2>
+                    </div>
+                    {!hasUnlimitedAccess && index >= 2 && (
+                      <h2 className="font-game text-3xl text-yellow-400">
+                        Pro
+                      </h2>
+                    )}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
@@ -98,7 +109,22 @@ function CourseChapters({ loading, courseDetail }: Props) {
                           <Button variant={"pixel"} className="bg-green-600">
                             Completed
                           </Button>
-                        ) : courseDetail?.userEnrolled ? (
+                        ) : courseDetail?.userEnrolled &&
+                          !hasUnlimitedAccess &&
+                          index < 2 ? (
+                          <Link
+                            href={
+                              "/courses/" +
+                              courseDetail?.CourseId +
+                              "/" +
+                              chapter?.chapterId +
+                              "/" +
+                              exc?.slug
+                            }
+                          >
+                            <Button variant={"pixel"}>{exc?.xp} xp</Button>
+                          </Link>
+                        ) : hasUnlimitedAccess && courseDetail?.userEnrolled ? (
                           <Link
                             href={
                               "/courses/" +
