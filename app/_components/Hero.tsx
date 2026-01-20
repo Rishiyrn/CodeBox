@@ -10,6 +10,8 @@ function Hero() {
         src="/Hero9.gif"
         alt="Hero Image"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 -mt-36">
         <h2 className="font-bold text-6xl md:text-8xl font-game text-center">
