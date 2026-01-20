@@ -88,13 +88,19 @@ export async function GET(req: NextRequest) {
     }
 
     // Extract courseIds
-    const courseIds = enrolledCourses.map((c) => c.courseId);
+    const courseIds = enrolledCourses
+      .map((c) => c.courseId)
+      .filter((id): id is number => id !== null);
+
+    if (courseIds.length === 0) {
+      return NextResponse.json([]);
+    }
 
     // 2️⃣ Fetch all course details in one go
     const courses = await db
       .select()
       .from(CourseTable)
-      // @ts-ignore
+      // `@ts-ignore`
       .where(inArray(CourseTable.CourseId, courseIds));
 
     // 3️⃣ Fetch chapters for all courses
