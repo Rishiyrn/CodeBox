@@ -11,6 +11,8 @@ function Hero() {
         alt="Hero Image"
         width={1000}
         height={1000}
+        unoptimized
+        priority
         className="w-full h-full object-cover absolute inset-0"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 -mt-36">
