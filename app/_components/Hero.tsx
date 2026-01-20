@@ -6,12 +6,12 @@ import Link from "next/link";
 function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <img
-        src="/Hero9.gif"
+      <Image
+        src="/hero9.gif"
         alt="Hero Image"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        fetchPriority="high"
+        width={1000}
+        height={1000}
+        className="w-full h-full object-cover absolute inset-0"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 -mt-36">
         <h2 className="font-bold text-6xl md:text-8xl font-game text-center">
