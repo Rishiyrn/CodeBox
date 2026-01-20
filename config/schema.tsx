@@ -1,5 +1,5 @@
 import { sub } from "date-fns";
-import { primaryKey } from "drizzle-orm/gel-core";
+import { primaryKey } from "drizzle-orm/pg-core";
 import {
   integer,
   json,
@@ -24,6 +24,7 @@ export const CourseTable = pgTable("courses", {
   bannerImage: varchar().notNull(),
   level: varchar().default("Beginner"),
   tags: varchar(),
+  editorType: varchar(),
 });
 
 export const CourseChaptersTable = pgTable("courseChapters", {

@@ -27,7 +27,8 @@ const CodeEditorChildren = ({ onCompleteExercise, IsCompleted }: any) => {
         variant={"pixel"}
         size={"lg"}
         className="text-xl"
-        onClick={() => sandpack.runSandpack()}>
+        onClick={() => sandpack.runSandpack()}
+      >
         Run Code
       </Button>
       <Button
@@ -45,9 +46,10 @@ const CodeEditorChildren = ({ onCompleteExercise, IsCompleted }: any) => {
 
 function CodeEditor({ courseExerciseData, loading }: Props) {
   const { exerciseslug } = useParams();
-  const exerciseIndex = courseExerciseData?.exercises?.findIndex(
-    (item) => item.slug == exerciseslug,
-  ) ?? -1;
+  const exerciseIndex =
+    courseExerciseData?.exercises?.findIndex(
+      (item) => item.slug == exerciseslug,
+    ) ?? -1;
   const hasExercise = exerciseIndex >= 0;
 
   const IsCompleted = hasExercise
@@ -72,7 +74,8 @@ function CodeEditor({ courseExerciseData, loading }: Props) {
   return (
     <div className="h-full">
       <SandpackProvider
-        template="static"
+        //@ts-ignore
+        template={courseExerciseData?.editorType ?? "react"}
         theme={gruvboxDark}
         style={{
           height: "100vh",
