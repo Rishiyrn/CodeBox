@@ -16,6 +16,7 @@ export type CourseExercise = {
   courseId: number;
   desc: string;
   name: string;
+  editorType?: string;
   exercises: exercise[];
   exerciseData: ExerciseData;
   completedExercise: completedExercises[];
@@ -140,7 +141,8 @@ function Playground() {
           <Image src={"/star.png"} alt="star" width={40} height={40} />
           {exerciseInfo?.xp && (
             <h2 className="text-2xl">
-              You can Earn <span className="text-4xl">{exerciseInfo.xp}</span> XP
+              You can Earn <span className="text-4xl">{exerciseInfo.xp}</span>{" "}
+              XP
             </h2>
           )}
         </div>
