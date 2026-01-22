@@ -60,6 +60,8 @@ function CourseChapters({ loading, courseDetail }: Props) {
     return completedChapter ? true : false;
   };
 
+  const sortedChapters = courseDetail?.chapters?.sort((a, b) => a.chapterId - b.chapterId);
+
   return (
     <div>
       {courseDetail?.chapters?.length === 0 ? (
@@ -69,7 +71,7 @@ function CourseChapters({ loading, courseDetail }: Props) {
         </div>
       ) : (
         <div className="p-5 border-4 rounded-2xl">
-          {courseDetail?.chapters?.map((chapter, index) => (
+          {sortedChapters?.map((chapter, index) => (
             <Accordion type="single" collapsible key={index}>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="p-3 hover:bg-zinc-800 font-game text-4xl">

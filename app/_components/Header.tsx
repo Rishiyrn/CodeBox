@@ -18,19 +18,46 @@ import axios from "axios";
 import { Course } from "../(routes)/courses/_components/CourseList";
 
 function Header() {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
   const path = usePathname();
   const { exerciseslug } = useParams();
-  const [courses, setCourses] = useState<Course[]>();
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    GetCourses();
-  }, []);
+    // Only fetch courses if user is authenticated
+    if (isLoaded && user) {
+      GetCourses();
+    } else if (isLoaded && !user) {
+      // User is not logged in, don't fetch
+      setLoading(false);
+    }
+  }, [isLoaded, user]);
 
   const GetCourses = async () => {
-    const result = await axios.get("/api/course");
-    console.log(result.data);
-    setCourses(result.data);
+    try {
+      const result = await axios.get("/api/course");
+      console.log("API Response:", result.data);
+      
+      // Check if response has error (unauthenticated)
+      if (result.data?.error) {
+        console.error("API Error:", result.data.error);
+        setCourses([]);
+        return;
+      }
+      
+      if (Array.isArray(result.data)) {
+        setCourses(result.data);
+      } else {
+        console.error("API did not return an array:", result.data);
+        setCourses([]);
+      }
+    } catch (error) {
+      console.error("Error fetching courses:", error);
+      setCourses([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -42,7 +69,7 @@ function Header() {
         </div>
       </Link>
       {/* Navbar */}
-      {!exerciseslug && courses ? (
+      {!exerciseslug && !loading && courses.length > 0 ? (
         <NavigationMenu>
           <NavigationMenuList className="gap-8">
             <NavigationMenuItem>
@@ -90,11 +117,11 @@ function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-      ) : (
+      ) : exerciseslug ? (
         <h2 className="font-game text-2xl">
           {exerciseslug?.toString()?.replaceAll("-", " ").toLocaleUpperCase()}
         </h2>
-      )}
+      ) : null}
       {/*sign up / login buttons */}
       {!user ? (
         <Link href="/sign-in">
