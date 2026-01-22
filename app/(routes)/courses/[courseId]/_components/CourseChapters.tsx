@@ -60,8 +60,7 @@ function CourseChapters({ loading, courseDetail }: Props) {
     return completedChapter ? true : false;
   };
 
-  const sortedChapters = courseDetail?.chapters?.sort((a, b) => a.chapterId - b.chapterId);
-
+  const sortedChapters = courseDetail?.chapters?.toSorted((a, b) => a.chapterId - b.chapterId);
   return (
     <div>
       {courseDetail?.chapters?.length === 0 ? (
