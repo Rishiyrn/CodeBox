@@ -3,106 +3,219 @@ import { ExerciseTable } from "@/config/schema"
 import { NextRequest, NextResponse } from "next/server"
 
 const DATA=[
-   {
-    "courseId": 2,
-    "exerciseId": "explore-the-web-skeleton",
-    "exerciseName": "Explore the Web Skeleton",
+  {
+    "courseId": 4,
+    "exerciseId": "why-hooks-exist",
+    "exerciseName": "Why Hooks Exist",
     "chapterId": 1,
     "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Welcome, brave explorer! Your journey begins by discovering the <strong>web skeleton</strong>. Every web page is built on the foundation of HTML.</p><p style='margin-bottom:8px;'>The <code>&lt;!DOCTYPE html&gt;</code> declaration tells the browser what type of document it is and prepares the page for modern rendering.</p><p style='margin-bottom:8px;'>The outer wrapper <code>&lt;html&gt;</code> contains everything on the page — think of it as the walls of your fortress.</p><p style='margin-bottom:8px;'>Inside the fortress, the <code>&lt;head&gt;</code> stores your tools: the <code>&lt;title&gt;</code>, meta tags, and other hidden helpers.</p><p style='margin-bottom:8px;'>The <code>&lt;body&gt;</code> is the open field where your story unfolds — headings, paragraphs, images, and links all appear here.</p><p style='margin-bottom:8px;'>Headings act like banners guiding visitors; paragraphs are your story logs; lists are treasure maps organizing loot.</p><p style='margin-bottom:8px;'>If the skeleton is wrong, your page may look broken or confusing. Correct structure means a reliable page across browsers and devices.</p><p style='margin-bottom:8px;'>This exercise trains you to recognize the essential tags that every HTML page needs. It is the first step to mastering web crafting.</p><p style='margin-bottom:8px;'>Observe, build, and defend your web skeleton — then move on to more advanced quests with confidence.</p><p style='margin-bottom:8px;'>Ready your quill: identify the DOCTYPE, the <code>&lt;html&gt;</code> wrapper, a proper <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code> to claim your victory.</p><p style='margin-bottom:8px;'>Completing this will unlock basic HTML understanding and set you up for the rest of the course.</p><p style='margin-bottom:8px;'>Good luck — the web world awaits!</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Create a complete HTML skeleton including <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html lang=\"en\"&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>. Inside <code>&lt;head&gt;</code> add a <code>&lt;title&gt;</code> with the text <strong>Web Skeleton Adventure</strong>. Leave the body empty for now.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Start with <code>&lt;!DOCTYPE html&gt;</code>. Then create <code>&lt;html lang=\"en\"&gt;</code>. Inside head add <code>&lt;title&gt;Web Skeleton Adventure&lt;/title&gt;</code>. Finally add an empty <code>&lt;body&gt;</code>.</p></body>",
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>You have crossed into the deeper layers of the React Realm.</p><p style='margin-bottom:8px;'>Before hooks existed, React relied on class components for state and lifecycle logic.</p><p style='margin-bottom:8px;'>This often caused complex code, duplicated logic, and harder maintenance.</p><p style='margin-bottom:8px;'>Hooks were introduced to solve these problems.</p><p style='margin-bottom:8px;'>They allow function components to use state, side effects, and lifecycle behavior.</p><p style='margin-bottom:8px;'>Hooks make logic reusable without changing component structure.</p><p style='margin-bottom:8px;'>They reduce the need for classes in modern React applications.</p><p style='margin-bottom:8px;'>With hooks, related logic can live together instead of being split.</p><p style='margin-bottom:8px;'>This leads to cleaner, more readable components.</p><p style='margin-bottom:8px;'>Hooks encourage composability and predictable data flow.</p><p style='margin-bottom:8px;'>Understanding why hooks exist is critical before using them.</p><p style='margin-bottom:8px;'>This knowledge forms the foundation of intermediate React mastery.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to recognize the purpose of hooks.</p><p>Create a function component named <strong>HookReason</strong>.</p><p>Inside it, render a paragraph using <code>&lt;p&gt;</code> with the text <strong>Hooks let function components use state</strong>.</p><p>Render the <strong>HookReason</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Hooks are not required yet.</p><p>This task focuses only on understanding their purpose.</p></body>",
       "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title></title>\n</head>\n<body>\n\n</body>\n</html>"
+        "/App.jsx": "function HookReason() {\n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      \n    </div>\n  );\n}"
       },
-      "regex": "(?i)<title>\\s*Web Skeleton Adventure\\s*</title>",
-      "output": "<title>Web Skeleton Adventure</title>",
+      "regex": "<p>\\s*Hooks let function components use state\\s*</p>",
+      "output": "<p>Hooks let function components use state</p>",
       "hintXp": 30
     }
-  },
+  }
+,
   {
-    "courseId": 2,
-    "exerciseId": "build-your-base-camp",
-    "exerciseName": "Build Your Base Camp",
+    "courseId": 4,
+    "exerciseId": "rules-of-hooks-trial",
+    "exerciseName": "Rules of Hooks Trial",
     "chapterId": 1,
     "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Every adventurer needs a base camp — a safe place to plan and rest. In HTML, your base camp is built with headings, paragraphs, and sections.</p><p style='margin-bottom:8px;'>A main heading (<code>&lt;h1&gt;</code>) acts like a flag planted at the camp's center, marking its purpose.</p><p style='margin-bottom:8px;'>Paragraphs (<code>&lt;p&gt;</code>) are the camp logs where you record instructions, stories, and NPC dialogues.</p><p style='margin-bottom:8px;'>Sections (<code>&lt;section&gt;</code>) divide your camp into zones—training grounds, supply tents, and the map room.</p><p style='margin-bottom:8px;'>Using the correct tags keeps your camp organized, accessible, and friendly to both players and browsers.</p><p style='margin-bottom:8px;'>Headings provide hierarchy; paragraphs provide content; semantic tags give meaning to your base layouts.</p><p style='margin-bottom:8px;'>Master the base camp structure and future quests will be easier to implement and navigate.</p><p style='margin-bottom:8px;'>This exercise focuses on placing a strong heading and a descriptive paragraph in the body.</p><p style='margin-bottom:8px;'>Think of HTML elements as camp equipment—each has a specific role and must be used correctly.</p><p style='margin-bottom:8px;'>When your base camp is solid, you can explore the rest of the web world without worry.</p><p style='margin-bottom:8px;'>Complete this and your in-game reputation will rise among fellow learners.</p><p style='margin-bottom:8px;'>Set up your flag and write your first log to start the adventure!</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Inside the <code>&lt;body&gt;</code>, add a heading <code>&lt;h1&gt;</code> with the text <strong>Welcome to Base Camp</strong> and a paragraph <code>&lt;p&gt;</code> with the text <strong>Prepare yourself for the HTML adventure!</strong>.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Use <code>&lt;h1&gt;Welcome to Base Camp&lt;/h1&gt;</code> and <code>&lt;p&gt;Prepare yourself for the HTML adventure!&lt;/p&gt;</code> inside the body.</p></body>",
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Power in the React Realm comes with strict rules.</p><p style='margin-bottom:8px;'>Hooks may look like simple functions, but they must be used correctly.</p><p style='margin-bottom:8px;'>React enforces rules to keep hooks predictable and stable.</p><p style='margin-bottom:8px;'>Hooks must be called at the top level of a component.</p><p style='margin-bottom:8px;'>They must never be called inside loops, conditions, or nested functions.</p><p style='margin-bottom:8px;'>Hooks must only be called from React function components.</p><p style='margin-bottom:8px;'>They can also be called from custom hooks.</p><p style='margin-bottom:8px;'>Breaking these rules causes unexpected behavior.</p><p style='margin-bottom:8px;'>React relies on call order to track hook state.</p><p style='margin-bottom:8px;'>Consistent hook usage ensures reliable rendering.</p><p style='margin-bottom:8px;'>This trial ensures you respect the laws of hooks.</p><p style='margin-bottom:8px;'>Follow the rules and the realm remains stable.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to follow the rules of hooks.</p><p>Create a component named <strong>RuleCheck</strong>.</p><p>Inside it, render a paragraph using <code>&lt;p&gt;</code> with the text <strong>Hooks follow strict rules</strong>.</p><p>Do not place hooks inside conditions or loops.</p><p>Render the <strong>RuleCheck</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>This exercise checks understanding, not hook usage.</p><p>Focus on structure and placement.</p></body>",
       "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Base Camp</title>\n</head>\n<body>\n\n</body>\n</html>"
+        "/App.jsx": "function RuleCheck() {\n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      \n    </div>\n  );\n}"
       },
-      "regex": "<h1>\\s*Welcome to Base Camp\\s*</h1>[\\s\\S]*<p>\\s*Prepare yourself for the HTML adventure!\\s*</p>",
-      "output": "<h1>Welcome to Base Camp</h1><p>Prepare yourself for the HTML adventure!</p>",
+      "regex": "<p>\\s*Hooks follow strict rules\\s*</p>",
+      "output": "<p>Hooks follow strict rules</p>",
+      "hintXp": 30
+    }
+  }
+,
+  {
+    "courseId": 4,
+    "exerciseId": "useeffect-introduction",
+    "exerciseName": "useEffect Introduction",
+    "chapterId": 1,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>As your components grow, they must react to the outside world.</p><p style='margin-bottom:8px;'>Some actions cannot happen during rendering.</p><p style='margin-bottom:8px;'>Fetching data, setting timers, and subscribing to events are side effects.</p><p style='margin-bottom:8px;'>React provides the <code>useEffect</code> hook to handle these effects.</p><p style='margin-bottom:8px;'>Effects run after the component renders.</p><p style='margin-bottom:8px;'>This keeps rendering pure and predictable.</p><p style='margin-bottom:8px;'>The effect function contains the side-effect logic.</p><p style='margin-bottom:8px;'>You can control when effects run using dependencies.</p><p style='margin-bottom:8px;'>Without dependencies, effects run after every render.</p><p style='margin-bottom:8px;'>Understanding <code>useEffect</code> is essential for real applications.</p><p style='margin-bottom:8px;'>This lesson introduces its purpose before deeper use.</p><p style='margin-bottom:8px;'>Prepare to control side effects safely.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to introduce <code>useEffect</code>.</p><p>Create a component named <strong>EffectIntro</strong>.</p><p>Inside it, use <code>useEffect</code> to log <strong>Effect activated</strong> to the console.</p><p>Also render a paragraph with the text <strong>Effect Initialized</strong>.</p><p>Render the <strong>EffectIntro</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Import <code>useEffect</code> from React.</p><p>An empty dependency array runs the effect once.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useEffect } from \"react\";\n\nfunction EffectIntro() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      \n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Effect Initialized\\s*</p>",
+      "output": "<p>Effect Initialized</p>",
       "hintXp": 35
     }
-  },
+  }
+,
   {
-    "courseId": 2,
-    "exerciseId": "name-your-world",
-    "exerciseName": "Name Your World",
+    "courseId": 4,
+    "exerciseId": "effect-dependencies-arena",
+    "exerciseName": "Effect Dependencies Arena",
     "chapterId": 1,
     "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Every world needs a name — a clear identity so explorers can find and recognize it. In HTML, the world is named with the <code>&lt;title&gt;</code> tag inside the <code>&lt;head&gt;</code>.</p><p style='margin-bottom:8px;'>The title appears on the browser tab and in search results, serving as your world's calling card.</p><p style='margin-bottom:8px;'>A concise and descriptive title helps visitors quickly understand what your page offers.</p><p style='margin-bottom:8px;'>Naming your world well increases discoverability and gives your site a professional feel.</p><p style='margin-bottom:8px;'>This exercise trains you to place the title correctly and choose a clear name for your HTML world.</p><p style='margin-bottom:8px;'>Think of the title as the banner that appears on every explorer's map — make it meaningful and memorable.</p><p style='margin-bottom:8px;'>Even small pages benefit from a thoughtful title — it is an important habit for all web builders.</p><p style='margin-bottom:8px;'>Once you master titles, your pages will start showing up properly in tabs and bookmarks.</p><p style='margin-bottom:8px;'>This task is simple but crucial — do it correctly to move forward in the questline.</p><p style='margin-bottom:8px;'>Add your world name inside the head and prepare for the next chapter of adventures.</p><p style='margin-bottom:8px;'>Your title completes the identity of the HTML skeleton you built earlier.</p><p style='margin-bottom:8px;'>Name well — your kingdom's reputation depends on it!</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Set the HTML page <code>&lt;title&gt;</code> to <strong>My Adventure World</strong> inside the <code>&lt;head&gt;</code>.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Open the <code>&lt;head&gt;</code> and add <code>&lt;title&gt;My Adventure World&lt;/title&gt;</code>. The title must be inside head, not body.</p></body>",
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>The arena tests control, not raw power.</p><p style='margin-bottom:8px;'>An effect that runs too often can weaken performance.</p><p style='margin-bottom:8px;'>React uses a dependency array to control effect execution.</p><p style='margin-bottom:8px;'>Dependencies tell React when an effect should re-run.</p><p style='margin-bottom:8px;'>An empty array runs the effect only once.</p><p style='margin-bottom:8px;'>Adding variables makes the effect react to change.</p><p style='margin-bottom:8px;'>Incorrect dependencies cause stale data or infinite loops.</p><p style='margin-bottom:8px;'>Correct dependencies keep logic predictable.</p><p style='margin-bottom:8px;'>This arena sharpens your awareness of effect timing.</p><p style='margin-bottom:8px;'>Control the flow and remain stable.</p><p style='margin-bottom:8px;'>Mastery comes from restraint.</p><p style='margin-bottom:8px;'>Step carefully inside the arena.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to control when an effect runs.</p><p>Create a state variable named <strong>count</strong> starting at <strong>0</strong>.</p><p>Use <code>useEffect</code> so it logs <strong>Count changed</strong> whenever <strong>count</strong> updates.</p><p>Render a paragraph showing <strong>Count: 0</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Add <code>count</code> inside the dependency array.</p><p>Use <code>useState</code> to create state.</p></body>",
       "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title></title>\n</head>\n<body>\n\n</body>\n</html>"
+        "/App.jsx": "import { useEffect, useState } from \"react\";\n\nfunction EffectArena() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <EffectArena />\n    </div>\n  );\n}"
       },
-      "regex": "(?i)<title>\\s*My Adventure World\\s*</title>",
-      "output": "<title>My Adventure World</title>",
-      "hintXp": 30
-    }
-  },
-  {
-    "courseId": 2,
-    "exerciseId": "break-and-repair",
-    "exerciseName": "Break & Repair",
-    "chapterId": 1,
-    "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Even the best fortresses can develop cracks. In HTML, broken or unclosed tags are the cracks that cause rendering issues.</p><p style='margin-bottom:8px;'>Your role is the repair hero: identify missing closing tags, mismatched nesting, and misplaced elements.</p><p style='margin-bottom:8px;'>Every opening tag (<code>&lt;tag&gt;</code>) should have a matching closing tag (<code>&lt;/tag&gt;</code>) unless it is self-closing.</p><p style='margin-bottom:8px;'>Improper nesting (for example placing a block-level tag inside an inline tag) can also break layouts and semantics.</p><p style='margin-bottom:8px;'>This exercise gives you a broken snippet to inspect and fix — a practical detective mission.</p><p style='margin-bottom:8px;'>Fixing HTML strengthens the page structure and makes future styling and interactivity predictable.</p><p style='margin-bottom:8px;'>Pay attention to headings, paragraphs, and the order of closing tags when repairing code.</p><p style='margin-bottom:8px;'>Once repaired, the page should display the correct heading and paragraph texts as intended.</p><p style='margin-bottom:8px;'>Good repair work increases your reliability as a web craftsman and prepares you for more complex challenges.</p><p style='margin-bottom:8px;'>This mission hones attention to detail — a vital skill for all web developers.</p><p style='margin-bottom:8px;'>Patch the cracks and your fortress will stand strong again.</p><p style='margin-bottom:8px;'>Begin the repair now and claim the title of Master Fixer.</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Inspect and fix the broken HTML so all tags are properly opened and closed. After repair, the body should contain a heading <code>&lt;h1&gt;</code> with <strong>Fortress Repaired</strong> and a paragraph <code>&lt;p&gt;</code> with <strong>Your castle is strong again!</strong>.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Look for missing <code>&lt;/title&gt;</code>, missing <code>&lt;/h1&gt;</code> or <code>&lt;/p&gt;</code>. Ensure tags are nested correctly: <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> must be complete.</p></body>",
-      "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Broken Fortress</title>\n</head>\n<body>\n  <!-- This file has intentional errors that you must fix -->\n  <h1>Fortress Repaired\n  <p>Your castle is strong again!\n</body>\n</html>"
-      },
-      "regex": "<h1>\\s*Fortress Repaired\\s*</h1>[\\s\\S]*<p>\\s*Your castle is strong again!\\s*</p>",
-      "output": "<h1>Fortress Repaired</h1><p>Your castle is strong again!</p>",
+      "regex": "<p>\\s*Count:\\s*0\\s*</p>",
+      "output": "<p>Count: 0</p>",
       "hintXp": 40
     }
-  },
-  {
-    "courseId": 2,
-    "exerciseId": "html-detective",
-    "exerciseName": "HTML Detective",
+  }
+,
+    {
+    "courseId": 4,
+    "exerciseId": "cleanup-ritual",
+    "exerciseName": "Cleanup Ritual",
     "chapterId": 1,
     "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Don your detective hat — it's time to hunt down HTML mistakes. A skilled detective finds missing tags, typos, and wrong nesting.</p><p style='margin-bottom:8px;'>Start by scanning for tags that never close or are mistyped (for example <code>&lt;heder&gt;</code> instead of <code>&lt;header&gt;</code>).</p><p style='margin-bottom:8px;'>Check that textual content sits inside the correct container: headings in <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, paragraphs in <code>&lt;p&gt;</code>.</p><p style='margin-bottom:8px;'>Missing quotes on attributes or stray characters can also break parsers — be vigilant.</p><p style='margin-bottom:8px;'>This exercise gives a nearly-correct file with subtle issues; your job is to correct them so the expected texts appear.</p><p style='margin-bottom:8px;'>Keeping a checklist helps: doctype, html lang, head with title, body with content, and matching closing tags.</p><p style='margin-bottom:8px;'>A methodical approach will help you become faster at spotting problems in real-world codebases.</p><p style='margin-bottom:8px;'>When all errors are found and fixed, the page should show the heading and paragraph exactly as specified.</p><p style='margin-bottom:8px;'>This detective training is essential — it saves time and prevents frustrating bugs later.</p><p style='margin-bottom:8px;'>Inspect carefully, correct mistakes, and log your findings to level up your debugging skills.</p><p style='margin-bottom:8px;'>Complete this case and wear the badge of HTML Detective with pride.</p><p style='margin-bottom:8px;'>Begin the investigation now!</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Inspect the provided HTML and fix any missing or misaligned tags. After fixing, the body must contain a heading <code>&lt;h1&gt;</code> with <strong>Detective Mode</strong> and a paragraph <code>&lt;p&gt;</code> with <strong>All HTML errors are found!</strong>.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Search for unclosed tags like <code>&lt;h1&gt;</code> without <code>&lt;/h1&gt;</code>, or a title missing <code>&lt;/title&gt;</code>. Fix typos and ensure proper nesting.</p></body>",
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Not all side effects last forever.</p><p style='margin-bottom:8px;'>Some effects create subscriptions, timers, or listeners.</p><p style='margin-bottom:8px;'>If left unmanaged, these effects cause memory leaks.</p><p style='margin-bottom:8px;'>React provides a cleanup mechanism inside <code>useEffect</code>.</p><p style='margin-bottom:8px;'>The cleanup function runs before the effect re-runs.</p><p style='margin-bottom:8px;'>It also runs when the component unmounts.</p><p style='margin-bottom:8px;'>Cleanup keeps the React Realm stable and efficient.</p><p style='margin-bottom:8px;'>Without cleanup, old effects linger in the shadows.</p><p style='margin-bottom:8px;'>This ritual teaches responsibility and balance.</p><p style='margin-bottom:8px;'>Every effect you create must be cleaned when needed.</p><p style='margin-bottom:8px;'>Respect the lifecycle and restore order.</p><p style='margin-bottom:8px;'>Complete the ritual to continue forward.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to perform a cleanup ritual.</p><p>Use <code>useEffect</code> to start an interval.</p><p>The interval should log <strong>Tick</strong> every second.</p><p>Return a cleanup function that clears the interval.</p><p>Render a paragraph with the text <strong>Cleanup Active</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Return a function from <code>useEffect</code>.</p><p>Use <code>clearInterval</code> inside cleanup.</p></body>",
       "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Detective Task</title>\n</head>\n<body>\n  <!-- Fix the issues in this file -->\n  <h1>Detective Mode\n  <p>All HTML errors are found!\n</body>\n</html>"
+        "/App.jsx": "import { useEffect } from \"react\";\n\nfunction CleanupRitual() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <CleanupRitual />\n    </div>\n  );\n}"
       },
-      "regex": "<h1>\\s*Detective Mode\\s*</h1>[\\s\\S]*<p>\\s*All HTML errors are found!\\s*</p>",
-      "output": "<h1>Detective Mode</h1><p>All HTML errors are found!</p>",
+      "regex": "<p>\\s*Cleanup Active\\s*</p>",
+      "output": "<p>Cleanup Active</p>",
+      "hintXp": 40
+    }
+}
+,
+  {
+    "courseId": 4,
+    "exerciseId": "hooks-master-check",
+    "exerciseName": "Hooks Master Check",
+    "chapterId": 1,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>You have learned why hooks exist and the rules that govern them.</p><p style='margin-bottom:8px;'>You explored side effects and learned how to control them.</p><p style='margin-bottom:8px;'>You managed dependencies and performed cleanup rituals.</p><p style='margin-bottom:8px;'>Now comes the final trial of this chapter.</p><p style='margin-bottom:8px;'>This challenge confirms your understanding of hooks usage.</p><p style='margin-bottom:8px;'>Balance, correctness, and clarity are required.</p><p style='margin-bottom:8px;'>A true React explorer uses hooks responsibly.</p><p style='margin-bottom:8px;'>This master check ties all lessons together.</p><p style='margin-bottom:8px;'>Focus on structure rather than complexity.</p><p style='margin-bottom:8px;'>Prove you are ready to move forward.</p><p style='margin-bottom:8px;'>Complete this and unlock the next chapter.</p><p style='margin-bottom:8px;'>The realm acknowledges your progress.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to combine basic hook knowledge.</p><p>Create a component named <strong>HookSummary</strong>.</p><p>Inside it, use <code>useState</code> to create a state variable <strong>active</strong> with initial value <strong>true</strong>.</p><p>Use <code>useEffect</code> to log <strong>Hook Ready</strong> once when the component mounts.</p><p>Render a paragraph with the text <strong>Hooks Mastered</strong>.</p><p>Render the <strong>HookSummary</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Use an empty dependency array to run the effect once.</p><p>The state value does not need to change.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useEffect, useState } from \"react\";\n\nfunction HookSummary() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <HookSummary />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Hooks Mastered\\s*</p>",
+      "output": "<p>Hooks Mastered</p>",
+      "hintXp": 35
+    }
+}
+,
+  {
+    "courseId": 4,
+    "exerciseId": "state-as-a-system",
+    "exerciseName": "State as a System",
+    "chapterId": 2,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>As applications grow, state becomes more than a single value.</p><p style='margin-bottom:8px;'>State represents the living data of your interface.</p><p style='margin-bottom:8px;'>Treating state as a system means thinking about how pieces relate.</p><p style='margin-bottom:8px;'>Scattered state leads to bugs and confusion.</p><p style='margin-bottom:8px;'>Organized state leads to clarity and predictability.</p><p style='margin-bottom:8px;'>React encourages structuring state intentionally.</p><p style='margin-bottom:8px;'>Related values often belong together.</p><p style='margin-bottom:8px;'>Updates should describe what happened, not how.</p><p style='margin-bottom:8px;'>This mindset prepares you for advanced patterns.</p><p style='margin-bottom:8px;'>Understanding state as a system is a key intermediate skill.</p><p style='margin-bottom:8px;'>This lesson focuses on structure, not complexity.</p><p style='margin-bottom:8px;'>Build systems, not scattered pieces.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to think of state as a unit.</p><p>Create a component named <strong>SystemState</strong>.</p><p>Use <code>useState</code> to store an object with two properties: <strong>count</strong> set to <strong>0</strong> and <strong>status</strong> set to <strong>idle</strong>.</p><p>Render a paragraph showing <strong>Count: 0</strong> and another showing <strong>Status: idle</strong>.</p><p>Render the <strong>SystemState</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>You can store objects in state.</p><p>Use one <code>useState</code> call with an object.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useState } from \"react\";\n\nfunction SystemState() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <SystemState />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Count:\\s*0\\s*</p>[\\s\\S]*<p>\\s*Status:\\s*idle\\s*</p>",
+      "output": "<p>Count: 0</p><p>Status: idle</p>",
+      "hintXp": 35
+    }
+  }
+,
+  {
+    "courseId": 4,
+    "exerciseId": "usereducer-awakening",
+    "exerciseName": "useReducer Awakening",
+    "chapterId": 2,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>As state grows more complex, simple updates become fragile.</p><p style='margin-bottom:8px;'>React offers <code>useReducer</code> to manage complex state transitions.</p><p style='margin-bottom:8px;'>Instead of setting values directly, actions describe what happened.</p><p style='margin-bottom:8px;'>A reducer decides how state changes in response to actions.</p><p style='margin-bottom:8px;'>This pattern creates predictable and testable updates.</p><p style='margin-bottom:8px;'>Reducers centralize state logic in one place.</p><p style='margin-bottom:8px;'>They are ideal when many updates affect the same state.</p><p style='margin-bottom:8px;'>This awakening introduces a more disciplined approach.</p><p style='margin-bottom:8px;'>You now move from scattered updates to intentional transitions.</p><p style='margin-bottom:8px;'>Mastering <code>useReducer</code> unlocks scalable patterns.</p><p style='margin-bottom:8px;'>Prepare to control change with precision.</p><p style='margin-bottom:8px;'>The awakening begins now.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to awaken <code>useReducer</code>.</p><p>Create a reducer that handles one action type: <strong>increment</strong>.</p><p>The initial state should be <strong>{ count: 0 }</strong>.</p><p>Dispatch the <strong>increment</strong> action once.</p><p>Render a paragraph showing <strong>Count: 1</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>A reducer receives <code>(state, action)</code>.</p><p>Return a new state object.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useReducer } from \"react\";\n\nfunction reducer(state, action) {\n  return state;\n}\n\nfunction ReducerAwakening() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <ReducerAwakening />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Count:\\s*1\\s*</p>",
+      "output": "<p>Count: 1</p>",
+      "hintXp": 40
+    }
+  }
+,
+  {
+    "courseId": 4,
+    "exerciseId": "actions-and-reducers",
+    "exerciseName": "Actions & Reducers",
+    "chapterId": 2,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Reducers gain true power when actions carry intent.</p><p style='margin-bottom:8px;'>An action describes what happened, not how state changes.</p><p style='margin-bottom:8px;'>Reducers interpret actions and produce the next state.</p><p style='margin-bottom:8px;'>This separation keeps logic predictable.</p><p style='margin-bottom:8px;'>Actions are plain objects with a type field.</p><p style='margin-bottom:8px;'>They may also include additional data.</p><p style='margin-bottom:8px;'>Reducers must always return a new state.</p><p style='margin-bottom:8px;'>They must never mutate the existing state.</p><p style='margin-bottom:8px;'>Clear action naming improves readability.</p><p style='margin-bottom:8px;'>This trial strengthens disciplined state transitions.</p><p style='margin-bottom:8px;'>Think in actions, not assignments.</p><p style='margin-bottom:8px;'>Let reducers decide the outcome.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to handle multiple actions.</p><p>Create two action types: <strong>increment</strong> and <strong>decrement</strong>.</p><p>The initial state should be <strong>{ count: 1 }</strong>.</p><p>Dispatch the <strong>decrement</strong> action once.</p><p>Render a paragraph showing <strong>Count: 0</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Use a switch statement inside the reducer.</p><p>Return a new state object for each action.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useReducer } from \"react\";\n\nfunction reducer(state, action) {\n  return state;\n}\n\nfunction ActionsAndReducers() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <ActionsAndReducers />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Count:\\s*0\\s*</p>",
+      "output": "<p>Count: 0</p>",
+      "hintXp": 40
+    }
+}
+,
+  {
+    "courseId": 4,
+    "exerciseId": "reducer-vs-usestate",
+    "exerciseName": "Reducer vs useState",
+    "chapterId": 2,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>With multiple tools comes the need for judgment.</p><p style='margin-bottom:8px;'><code>useState</code> is simple and perfect for isolated values.</p><p style='margin-bottom:8px;'><code>useReducer</code> shines when state logic becomes complex.</p><p style='margin-bottom:8px;'>Choosing the right tool keeps components readable.</p><p style='margin-bottom:8px;'>Overusing reducers can add unnecessary complexity.</p><p style='margin-bottom:8px;'>Overusing state setters can scatter logic.</p><p style='margin-bottom:8px;'>The key is understanding when complexity demands structure.</p><p style='margin-bottom:8px;'>This comparison builds architectural instinct.</p><p style='margin-bottom:8px;'>Experienced React developers choose intentionally.</p><p style='margin-bottom:8px;'>This trial sharpens your decision-making.</p><p style='margin-bottom:8px;'>Balance simplicity with scalability.</p><p style='margin-bottom:8px;'>Choose wisely, architect.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to compare approaches.</p><p>Create a component named <strong>StateComparison</strong>.</p><p>Use <code>useState</code> to store a value <strong>mode</strong> with initial value <strong>simple</strong>.</p><p>Render a paragraph showing <strong>Mode: simple</strong>.</p><p>This exercise confirms understanding of when simple state is enough.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Not every problem needs a reducer.</p><p>Use <code>useState</code> directly.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useState } from \"react\";\n\nfunction StateComparison() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <StateComparison />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Mode:\\s*simple\\s*</p>",
+      "output": "<p>Mode: simple</p>",
+      "hintXp": 35
+    }
+}
+,
+  {
+    "courseId": 4,
+    "exerciseId": "complex-state-trial",
+    "exerciseName": "Complex State Trial",
+    "chapterId": 2,
+    "exercisesContent": {
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>The realm now tests your ability to manage complexity.</p><p style='margin-bottom:8px;'>Complex state involves multiple related values.</p><p style='margin-bottom:8px;'>Managing them independently leads to fragile logic.</p><p style='margin-bottom:8px;'>Reducers help centralize and control these transitions.</p><p style='margin-bottom:8px;'>Each action represents a meaningful event.</p><p style='margin-bottom:8px;'>State changes must remain predictable.</p><p style='margin-bottom:8px;'>This trial pushes you to think in systems.</p><p style='margin-bottom:8px;'>Your goal is clarity, not cleverness.</p><p style='margin-bottom:8px;'>Organized state leads to stable applications.</p><p style='margin-bottom:8px;'>Face the trial with discipline.</p><p style='margin-bottom:8px;'>Only structured thinking survives here.</p><p style='margin-bottom:8px;'>Prove your control over complex state.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to manage related state together.</p><p>Use <code>useReducer</code> to manage state with <strong>count</strong> and <strong>status</strong>.</p><p>Initial state should be <strong>{ count: 0, status: 'idle' }</strong>.</p><p>Handle one action type <strong>activate</strong> that sets <strong>status</strong> to <strong>active</strong>.</p><p>Dispatch the <strong>activate</strong> action once.</p><p>Render two paragraphs showing <strong>Count: 0</strong> and <strong>Status: active</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Return a new state object from the reducer.</p><p>Do not mutate the existing state.</p></body>",
+      "starterCode": {
+        "/App.jsx": "import { useReducer } from \"react\";\n\nfunction reducer(state, action) {\n  return state;\n}\n\nfunction ComplexStateTrial() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <ComplexStateTrial />\n    </div>\n  );\n}"
+      },
+      "regex": "<p>\\s*Count:\\s*0\\s*</p>[\\s\\S]*<p>\\s*Status:\\s*active\\s*</p>",
+      "output": "<p>Count: 0</p><p>Status: active</p>",
       "hintXp": 45
     }
-  },
+  }
+,
   {
-    "courseId": 2,
-    "exerciseId": "element-collector",
-    "exerciseName": "Element Collector",
-    "chapterId": 1,
+    "courseId": 4,
+    "exerciseId": "state-mastery-check",
+    "exerciseName": "State Mastery Check",
+    "chapterId": 2,
     "exercisesContent": {
-      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>Become the Element Collector — gather headings, paragraphs, and lists to build a rich page. Each element is an artifact that adds meaning and structure.</p><p style='margin-bottom:8px;'>Headings (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>) give hierarchy; paragraphs (<code>&lt;p&gt;</code>) provide content; lists (<code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code>) organize items.</p><p style='margin-bottom:8px;'>Links (<code>&lt;a&gt;</code>) guide explorers to new realms, and images (<code>&lt;img&gt;</code>) paint scenes of your world.</p><p style='margin-bottom:8px;'>Using these elements correctly creates pages that are scannable, accessible, and enjoyable to read.</p><p style='margin-bottom:8px;'>This exercise will ask you to collect a few basic elements and place them in the body.</p><p style='margin-bottom:8px;'>Think of each <code>&lt;li&gt;</code> as a treasure chest — list them clearly for future retrieval.</p><p style='margin-bottom:8px;'>Collecting and arranging elements teaches you how to present information cleanly and logically.</p><p style='margin-bottom:8px;'>A well-structured page is easier to style later and better for accessibility tools and search engines.</p><p style='margin-bottom:8px;'>Practice makes perfect: the more elements you use, the more confident you become.</p><p style='margin-bottom:8px;'>This quest readies you for complex pages by mastering small, reusable parts.</p><p style='margin-bottom:8px;'>Collect the required elements and your inventory will be complete.</p><p style='margin-bottom:8px;'>Start collecting now — three artifacts await!</p></body>",
-      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Inside the <code>&lt;body&gt;</code>, add a heading <code>&lt;h1&gt;</code> with <strong>Element Collection</strong>, a paragraph <code>&lt;p&gt;</code> with <strong>Gather all HTML treasures!</strong>, and an unordered list <code>&lt;ul&gt;</code> with three list items: <strong>Headings</strong>, <strong>Paragraphs</strong>, and <strong>Links</strong>.</p></body>",
-      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Use <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and a <code>&lt;ul&gt;</code> containing three <code>&lt;li&gt;</code> items. Example: <code>&lt;li&gt;Headings&lt;/li&gt;</code>.</p></body>",
+      "content": "<body style='font-family:Arial,sans-serif;line-height:1.6;background-color:#0f0f0f;padding:20px;'><p style='margin-bottom:8px;'>You have explored state as structure, not just storage.</p><p style='margin-bottom:8px;'>You learned when to use reducers and when to keep things simple.</p><p style='margin-bottom:8px;'>You handled actions, transitions, and complex state safely.</p><p style='margin-bottom:8px;'>This final trial confirms your understanding.</p><p style='margin-bottom:8px;'>The goal is clarity, not complexity.</p><p style='margin-bottom:8px;'>Every decision should feel intentional.</p><p style='margin-bottom:8px;'>A true React architect controls state calmly.</p><p style='margin-bottom:8px;'>This mastery check ties all lessons together.</p><p style='margin-bottom:8px;'>Focus on correctness and structure.</p><p style='margin-bottom:8px;'>Prove your readiness to advance.</p><p style='margin-bottom:8px;'>The realm acknowledges your growth.</p><p style='margin-bottom:8px;'>Prepare for the next challenge.</p></body>",
+      "task": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Your mission is to demonstrate state mastery.</p><p>Create a component named <strong>StateMaster</strong>.</p><p>Use <code>useReducer</code> with initial state <strong>{ value: 5 }</strong>.</p><p>Handle one action type <strong>double</strong> that doubles the value.</p><p>Dispatch the <strong>double</strong> action once.</p><p>Render a paragraph showing <strong>Value: 10</strong>.</p><p>Render the <strong>StateMaster</strong> component inside <strong>App</strong>.</p></body>",
+      "hint": "<body style='font-family:Arial,sans-serif;padding:10px;'><p>Return a new state object with <code>value * 2</code>.</p><p>Reducers must be pure functions.</p></body>",
       "starterCode": {
-        "/index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Element Collector</title>\n</head>\n<body>\n\n</body>\n</html>"
+        "/App.jsx": "import { useReducer } from \"react\";\n\nfunction reducer(state, action) {\n  return state;\n}\n\nfunction StateMaster() {\n  \n  return (\n    <div>\n      \n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      <StateMaster />\n    </div>\n  );\n}"
       },
-      "regex": "<h1>\\s*Element Collection\\s*</h1>[\\s\\S]*<p>\\s*Gather all HTML treasures!\\s*</p>[\\s\\S]*<li>\\s*Headings\\s*</li>[\\s\\S]*<li>\\s*Paragraphs\\s*</li>[\\s\\S]*<li>\\s*Links\\s*</li>",
-      "output": "<h1>Element Collection</h1><p>Gather all HTML treasures!</p><ul><li>Headings</li><li>Paragraphs</li><li>Links</li></ul>",
-      "hintXp": 35
+      "regex": "<p>\\s*Value:\\s*10\\s*</p>",
+      "output": "<p>Value: 10</p>",
+      "hintXp": 40
     }
   }
 ]

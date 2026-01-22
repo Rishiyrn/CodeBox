@@ -4,160 +4,348 @@ import { NextRequest, NextResponse } from "next/server"
 
 const DATA=
 [
-  {
+    {
     "id": 1,
-    "name": "Introduction to HTML",
-    "desc": "Discover the foundation of every webpage and learn how HTML shapes the digital world.",
+    "name": "Hooks Awakening",
+    "desc": "Move beyond the basics and unlock the true power of React using hooks to manage logic, state, and lifecycle behavior.",
     "exercises": [
-      {"name": "Explore the Web Skeleton", "slug": "explore-the-web-skeleton", "xp": 20, "difficulty": "easy"},
-      {"name": "Build Your Base Camp", "slug": "build-your-base-camp", "xp": 25, "difficulty": "easy"},
-      {"name": "Name Your World", "slug": "name-your-world", "xp": 15, "difficulty": "easy"},
-      {"name": "Break & Repair", "slug": "break-and-repair", "xp": 20, "difficulty": "easy"},
-      {"name": "HTML Detective", "slug": "html-detective", "xp": 20, "difficulty": "easy"},
-      {"name": "Element Collector", "slug": "element-collector", "xp": 25, "difficulty": "easy"}
+      {
+        "name": "Why Hooks Exist",
+        "slug": "why-hooks-exist",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Rules of Hooks Trial",
+        "slug": "rules-of-hooks-trial",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useEffect Introduction",
+        "slug": "useeffect-introduction",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Effect Dependencies Arena",
+        "slug": "effect-dependencies-arena",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Cleanup Ritual",
+        "slug": "cleanup-ritual",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Hooks Master Check",
+        "slug": "hooks-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 2,
-    "name": "HTML Boilerplate",
-    "desc": "Understand the core structure that every HTML document begins with.",
+    "name": "Advanced State Patterns",
+    "desc": "Master complex state management patterns and learn how to structure state for scalable React applications.",
     "exercises": [
-      {"name": "Build the Core Structure", "slug": "build-the-core-structure", "xp": 35, "difficulty": "medium"},
-      {"name": "Fix the Broken Blueprint", "slug": "fix-the-broken-blueprint", "xp": 30, "difficulty": "easy"},
-      {"name": "Boost Meta Power", "slug": "boost-meta-power", "xp": 20, "difficulty": "easy"},
-      {"name": "Add Language Identity", "slug": "add-language-identity", "xp": 10, "difficulty": "easy"},
-      {"name": "Viewport Setup", "slug": "viewport-setup", "xp": 20, "difficulty": "easy"},
-      {"name": "Author Credit", "slug": "author-credit", "xp": 15, "difficulty": "easy"}
+      {
+        "name": "State as a System",
+        "slug": "state-as-a-system",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useReducer Awakening",
+        "slug": "usereducer-awakening",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Actions & Reducers",
+        "slug": "actions-and-reducers",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Reducer vs useState",
+        "slug": "reducer-vs-usestate",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Complex State Trial",
+        "slug": "complex-state-trial",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "State Mastery Check",
+        "slug": "state-mastery-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+   {
     "id": 3,
-    "name": "Head & Body Tags",
-    "desc": "Learn the difference between behind-the-scenes metadata and visible page content.",
+    "name": "Context & Global Power",
+    "desc": "Learn how to share data across the React realm without prop drilling by using Context wisely.",
     "exercises": [
-      {"name": "Mind vs Body", "slug": "mind-vs-body", "xp": 20, "difficulty": "easy"},
-      {"name": "Activate Styles", "slug": "activate-styles", "xp": 30, "difficulty": "medium"},
-      {"name": "Display Your Content", "slug": "display-your-content", "xp": 15, "difficulty": "easy"},
-      {"name": "Add External Script", "slug": "add-external-script", "xp": 20, "difficulty": "easy"},
-      {"name": "Meta Collection", "slug": "meta-collection", "xp": 25, "difficulty": "easy"},
-      {"name": "Body Structure Challenge", "slug": "body-structure-challenge", "xp": 25, "difficulty": "easy"}
+      {
+        "name": "Why Context Exists",
+        "slug": "why-context-exists",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Create the Context",
+        "slug": "create-the-context",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Provider Ritual",
+        "slug": "provider-ritual",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Consume the Power",
+        "slug": "consume-the-power",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Avoid Prop Drilling",
+        "slug": "avoid-prop-drilling",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Context Master Check",
+        "slug": "context-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 4,
-    "name": "Text Formatting",
-    "desc": "Format your content with headings, paragraphs, bold, italic, and more.",
+    "name": "Performance & Optimization",
+    "desc": "Sharpen your React skills by learning how to optimize rendering, avoid unnecessary work, and keep your apps fast.",
     "exercises": [
-      {"name": "Create the Text Realm", "slug": "create-the-text-realm", "xp": 30, "difficulty": "easy"},
-      {"name": "Power Words", "slug": "power-words", "xp": 20, "difficulty": "easy"},
-      {"name": "Build a Story Block", "slug": "build-a-story-block", "xp": 30, "difficulty": "medium"},
-      {"name": "Line Break Mastery", "slug": "line-break-mastery", "xp": 15, "difficulty": "easy"},
-      {"name": "Quote Chamber", "slug": "quote-chamber", "xp": 25, "difficulty": "easy"},
-      {"name": "Code Snippet Display", "slug": "code-snippet-display", "xp": 30, "difficulty": "medium"}
+      {
+        "name": "Why Performance Matters",
+        "slug": "why-performance-matters",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Memoization Basics",
+        "slug": "memoization-basics",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useMemo Trial",
+        "slug": "usememo-trial",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useCallback Arena",
+        "slug": "usecallback-arena",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Prevent Unnecessary Renders",
+        "slug": "prevent-unnecessary-renders",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Performance Master Check",
+        "slug": "performance-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 5,
-    "name": "Links & Navigation",
-    "desc": "Create portals between pages and build simple navigation.",
+    "name": "Side Effects & Data Fetching",
+    "desc": "Master side effects in React by handling data fetching, subscriptions, and async flows safely and predictably.",
     "exercises": [
-      {"name": "Create a Warp Gate", "slug": "create-a-warp-gate", "xp": 20, "difficulty": "easy"},
-      {"name": "Open a New Dimension", "slug": "open-a-new-dimension", "xp": 25, "difficulty": "easy"},
-      {"name": "Navigation Builder", "slug": "navigation-builder", "xp": 40, "difficulty": "medium"},
-      {"name": "Anchor Teleport", "slug": "anchor-teleport", "xp": 20, "difficulty": "easy"},
-      {"name": "Email Portal", "slug": "email-portal", "xp": 20, "difficulty": "easy"},
-      {"name": "Button Link Trick", "slug": "button-link-trick", "xp": 25, "difficulty": "medium"}
+      {
+        "name": "Understanding Side Effects",
+        "slug": "understanding-side-effects",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useEffect Deep Dive",
+        "slug": "useeffect-deep-dive",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Fetch Data Ritual",
+        "slug": "fetch-data-ritual",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Loading & Error States",
+        "slug": "loading-and-error-states",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Avoid Infinite Loops",
+        "slug": "avoid-infinite-loops",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Side Effects Master Check",
+        "slug": "side-effects-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 6,
-    "name": "Images",
-    "desc": "Display images, control sizing, and optimize accessibility.",
+    "name": "Refs & Imperative Control",
+    "desc": "Gain fine-grained control over the DOM and component instances using refs and imperative patterns.",
     "exercises": [
-      {"name": "Summon an Image", "slug": "summon-an-image", "xp": 20, "difficulty": "easy"},
-      {"name": "Vision for All", "slug": "vision-for-all", "xp": 15, "difficulty": "easy"},
-      {"name": "Image Grid Challenge", "slug": "image-grid-challenge", "xp": 35, "difficulty": "medium"},
-      {"name": "Resize Hero", "slug": "resize-hero", "xp": 20, "difficulty": "easy"},
-      {"name": "Caption Creator", "slug": "caption-creator", "xp": 25, "difficulty": "medium"},
-      {"name": "Broken Image Test", "slug": "broken-image-test", "xp": 15, "difficulty": "easy"}
+      {
+        "name": "Why Refs Exist",
+        "slug": "why-refs-exist",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "useRef Awakening",
+        "slug": "useref-awakening",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "DOM Access Trial",
+        "slug": "dom-access-trial",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Persist Values with Refs",
+        "slug": "persist-values-with-refs",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Imperative Handle Ritual",
+        "slug": "imperative-handle-ritual",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Refs Master Check",
+        "slug": "refs-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 7,
-    "name": "Lists",
-    "desc": "Structure grouped information using ordered, unordered, and description lists.",
+    "name": "Routing & Navigation",
+    "desc": "Learn how to navigate across the React realm using client-side routing and structured navigation patterns.",
     "exercises": [
-      {"name": "Bullet Creator", "slug": "bullet-creator", "xp": 20, "difficulty": "easy"},
-      {"name": "Number Builder", "slug": "number-builder", "xp": 20, "difficulty": "easy"},
-      {"name": "Nested List Challenge", "slug": "nested-list-challenge", "xp": 35, "difficulty": "medium"},
-      {"name": "Description Vault", "slug": "description-vault", "xp": 25, "difficulty": "easy"},
-      {"name": "Task Checklist", "slug": "task-checklist", "xp": 20, "difficulty": "easy"},
-      {"name": "Navigation with Lists", "slug": "navigation-with-lists", "xp": 35, "difficulty": "medium"}
+      {
+        "name": "Why Routing Matters",
+        "slug": "why-routing-matters",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Router Setup Ritual",
+        "slug": "router-setup-ritual",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Route Parameters Trial",
+        "slug": "route-parameters-trial",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Navigation Links Quest",
+        "slug": "navigation-links-quest",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Protected Routes Arena",
+        "slug": "protected-routes-arena",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Routing Master Check",
+        "slug": "routing-master-check",
+        "xp": 30,
+        "difficulty": "medium"
+      }
     ]
   },
-  {
+    {
     "id": 8,
-    "name": "Tables",
-    "desc": "Represent information in structured grid format.",
+    "name": "Architecture & Best Practices",
+    "desc": "Consolidate your React knowledge by learning scalable architecture patterns and professional best practices.",
     "exercises": [
-      {"name": "Table Blueprint", "slug": "table-blueprint", "xp": 30, "difficulty": "medium"},
-      {"name": "Add Column Headers", "slug": "add-column-headers", "xp": 20, "difficulty": "easy"},
-      {"name": "Merge the Cells", "slug": "merge-the-cells", "xp": 35, "difficulty": "medium"},
-      {"name": "Student Report Table", "slug": "student-report-table", "xp": 25, "difficulty": "easy"},
-      {"name": "Border Styling", "slug": "border-styling", "xp": 20, "difficulty": "easy"},
-      {"name": "Header Footer Rows", "slug": "header-footer-rows", "xp": 30, "difficulty": "medium"}
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Forms Basics",
-    "desc": "Collect user input using form controls like input, labels, and buttons.",
-    "exercises": [
-      {"name": "Create a Login Portal", "slug": "create-a-login-portal", "xp": 40, "difficulty": "medium"},
-      {"name": "Design a Contact Form", "slug": "design-a-contact-form", "xp": 45, "difficulty": "medium"},
-      {"name": "Placeholder Magic", "slug": "placeholder-magic", "xp": 15, "difficulty": "easy"},
-      {"name": "Label Linker", "slug": "label-linker", "xp": 20, "difficulty": "easy"},
-      {"name": "Choose Wisely", "slug": "choose-wisely", "xp": 25, "difficulty": "easy"},
-      {"name": "Dropdown Selector", "slug": "dropdown-selector", "xp": 30, "difficulty": "medium"}
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Semantic HTML",
-    "desc": "Use meaningful HTML elements to improve page structure and accessibility.",
-    "exercises": [
-      {"name": "Build the Layout", "slug": "build-the-layout", "xp": 35, "difficulty": "medium"},
-      {"name": "Blog Structure", "slug": "blog-structure", "xp": 40, "difficulty": "medium"},
-      {"name": "Sidebar Creator", "slug": "sidebar-creator", "xp": 25, "difficulty": "easy"},
-      {"name": "Navigation Map", "slug": "navigation-map", "xp": 35, "difficulty": "medium"},
-      {"name": "Figure & Caption", "slug": "figure-and-caption", "xp": 25, "difficulty": "easy"},
-      {"name": "Semantic Rebuild", "slug": "semantic-rebuild", "xp": 40, "difficulty": "medium"}
-    ]
-  },
-  {
-    "id": 11,
-    "name": "Audio & Video",
-    "desc": "Add multimedia components for richer experiences.",
-    "exercises": [
-      {"name": "Play the Sound", "slug": "play-the-sound", "xp": 25, "difficulty": "easy"},
-      {"name": "Video Portal", "slug": "video-portal", "xp": 30, "difficulty": "medium"},
-      {"name": "Autoplay Test", "slug": "autoplay-test", "xp": 20, "difficulty": "easy"},
-      {"name": "Add Subtitles", "slug": "add-subtitles", "xp": 40, "difficulty": "medium"},
-      {"name": "Audio Playlist", "slug": "audio-playlist", "xp": 20, "difficulty": "easy"},
-      {"name": "Thumbnail Setup", "slug": "thumbnail-setup", "xp": 25, "difficulty": "easy"}
-    ]
-  },
-  {
-    "id": 12,
-    "name": "HTML Best Practices",
-    "desc": "Write clear, clean, and accessible HTML optimized for real-world use.",
-    "exercises": [
-      {"name": "Code Cleanup", "slug": "code-cleanup", "xp": 20, "difficulty": "easy"},
-      {"name": "Accessibility Upgrade", "slug": "accessibility-upgrade", "xp": 35, "difficulty": "medium"},
-      {"name": "Alt Text Review", "slug": "alt-text-review", "xp": 20, "difficulty": "easy"},
-      {"name": "Heading Order Fix", "slug": "heading-order-fix", "xp": 25, "difficulty": "easy"},
-      {"name": "Link Check", "slug": "link-check", "xp": 20, "difficulty": "easy"},
-      {"name": "Semantic Improvement", "slug": "semantic-improvement", "xp": 40, "difficulty": "medium"}
+      {
+        "name": "Folder Structure Wisdom",
+        "slug": "folder-structure-wisdom",
+        "xp": 25,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Separation of Concerns",
+        "slug": "separation-of-concerns",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Custom Hooks Forge",
+        "slug": "custom-hooks-forge",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Error Boundaries Trial",
+        "slug": "error-boundaries-trial",
+        "xp": 35,
+        "difficulty": "medium"
+      },
+      {
+        "name": "Reusable Patterns Quest",
+        "slug": "reusable-patterns-quest",
+        "xp": 40,
+        "difficulty": "medium"
+      },
+      {
+        "name": "React Architect Graduation",
+        "slug": "react-architect-graduation",
+        "xp": 45,
+        "difficulty": "medium"
+      }
     ]
   }
 ]
@@ -167,7 +355,7 @@ const DATA=
 export async function GET(req: NextRequest) {
     DATA.forEach(async (item) => {
         await db.insert(CourseChaptersTable).values({
-            courseId: 2, //Change Course ID depends on course info,
+            courseId: 4, //Change Course ID depends on course info,
             desc: item?.desc,
             exercises: item.exercises,
             name: item?.name,
